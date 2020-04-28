@@ -1,8 +1,16 @@
+<div class="booyah-box col-10 offset-1">
+<h1><%= link_to 'Click Here To Submit Your Esports Team', 'teams/new#' %> </h1>
+</div>
+
 <% @teams.each do |team| %>
    <div class="booyah-box col-10 offset-1">
     <h1><%= team.name %></h1>
     <i><%= team.games %></i>
     <p><%= team.championships %></p>
+
+     <% if team.user.present? %>
+      <small><%= team.user.email %></small>
+    <% end %>
   </div>
 
 
